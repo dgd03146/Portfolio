@@ -30,3 +30,37 @@
   --weight-semi-bold: 600;
   --weight-regular: 400;
 }
+
+/* Universal tags 공통적으로 적용해야할 것 */
+* {
+  box-sizing: border-box;
+}
+
+/* Typograph  웹사이트에 전반적으로 쓰여진 텍스트*/
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-font-white);
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-font-white);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+  color: var(--color-font-white);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+  color: var(--color-font-white);
+  margin: 4px 0;
+}
