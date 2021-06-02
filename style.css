@@ -1,4 +1,3 @@
-/* font-family: 'Open Sans', sans-serif; */
 /* Global */
 :root {
   /* Color */
@@ -36,12 +35,27 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-font-white);
+}
+
 /* Typograph  웹사이트에 전반적으로 쓰여진 텍스트*/
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: var(--color-font-white);
   margin: 16px 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 h2 {
@@ -63,4 +77,51 @@ p {
   font-weight: var(--font-regular);
   color: var(--color-font-white);
   margin: 4px 0;
+}
+
+/* Nav bar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-background-black);
+  align-items: center;
+  padding: 16px;
+}
+
+.navbar__menu {
+  display: flex;
+  color: var(--color-font-white);
+}
+
+.navbar__menu__item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+}
+
+.navbar__menu__item span {
+  position: relative;
+}
+
+.navbar__menu__item span::before {
+  content: "";
+  position: absolute; /*before를 절대위치*/
+  background-color: var(--color-background-black);
+  height: 2px;
+  width: 0;
+  bottom: -10px; /*bottom을 주어, 글자 밑에 위치시킴*/
+  transition: 0.5s; /*가상클래스에 이벤트 발생시 시간 지정*/
+
+  left: 50%; /*만약 왼쪽에서부터 커지게하려면-> left를 0으로 두면 됨*/
+  transform: translateX(-50%);
+}
+
+.navbar__menu__item span:hover::before {
+  width: 100%;
+  background-color: var(--color-font-white);
 }
