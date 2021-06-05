@@ -17,6 +17,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
@@ -24,7 +29,7 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <a href="#"><span>Folio</span></a>
+        <a href="#"><span>Jung</span></a>
       </div>
       <div id="navbar__menu">
         <ul class="navbar__menu">
@@ -36,11 +41,9 @@
           <li class="navbar__menu__item"><span>Contact</span></li>
         </ul>
       </div>
-      <div id="navbar__search">
-        <button class="navbar__search__btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+      <button class="navbar__search__btn">
+        <i class="fas fa-search"></i>
+      </button>
     </nav>
     <!-- Home -->
     <section id="home">
@@ -51,14 +54,25 @@
         </div>
         <button class="home__contact">contact</button>
       </div>
-      <img
-        src="imgs/avatar.png"
-        alt="Jung's profile photo"
-        class="home__avatar"
-      />
+      <div class="img">
+        <img
+          src="imgs/avatar.png"
+          alt="Jung's profile photo"
+          class="home__avatar"
+        />
+      </div>
+
+      <ul class="pageBtn">
+        <li><button></button></li>
+        <li><button></button></li>
+        <li><button></button></li>
+        <li><button></button></li>
+        <li><button></button></li>
+        <li><button></button></li>
+      </ul>
     </section>
     <!-- About -->
-    <section id="about">
+    <section id="about" class="section section__container">
       <h1>About me</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
@@ -71,7 +85,7 @@
           <div class="major__icon">
             <i class="fab fa-html5"></i>
           </div>
-          <div class="major__title">HTML</div>
+          <h2 class="major__title">HTML</h2>
           <div class="major__description">
             HTML stands for Hyper Text Markup Language <br />
             HTML is the standard markup language for creating Web pages
@@ -81,7 +95,7 @@
           <div class="major__icon">
             <i class="fab fa-css3-alt"></i>
           </div>
-          <div class="major__title">CSS</div>
+          <h2 class="major__title">CSS</h2>
           <div class="major__description">
             CSS is the language we use to style an HTML document<br />
             CSS describes how HTML elements should be displayed
@@ -91,7 +105,7 @@
           <div class="major__icon">
             <i class="fab fa-js-square"></i>
           </div>
-          <div class="major__title">JavaScript</div>
+          <h2 class="major__title">JavaScript</h2>
           <div class="major__description">
             JavaScript is the world's most popular programming language <br />
             JavaScript is the programming language of the Web
@@ -105,8 +119,10 @@
             alt="university"
             class="school__logo"
           />
-          <p class="school__name">Yeongnam University</p>
-          <p class="school__period">2015 March ~ Until now</p>
+          <div class="school__description">
+            <p class="school__name">Currently studing at Yeongnam University</p>
+            <p class="school__period">2015 March ~ Until now</p>
+          </div>
         </div>
         <div class="school">
           <img
@@ -114,103 +130,107 @@
             alt="highschool"
             class="school__logo"
           />
-          <p class="school__name">Yeongnam High School</p>
-          <p class="school__period">2012 March ~ 2015 February</p>
+          <div class="school__description">
+            <p class="school__name">Yeongnam High School</p>
+            <p class="school__period">2012 March ~ 2015 February</p>
+          </div>
         </div>
       </div>
     </section>
     <!-- Skills -->
-    <section id="skills">
-      <h1>Skills</h1>
-      <h2>Skills & Attributes</h2>
-      <p>
-        Experience with all phases of the software life-cycle. Passion for
-        learning new technologies. Capable of working within a team environment
-        and independently. Ability to plan and time schedule, work under strict
-        time pressure and adapt quickly when needed
-      </p>
-      <div class="skillset">
-        <div class="skillset_left">
-          <h3 class="skillset_title">Skills</h3>
-          <div class="skill">
-            <div class="skill_description">
-              <span>HTML</span>
-              <span>90%</span>
+    <section id="skills" class="section">
+      <div class="section__container">
+        <h1>Skills</h1>
+        <h2>Skills & Attributes</h2>
+        <p>
+          Experience with all phases of the software life-cycle. Passion for
+          learning new technologies. Capable of working within a team
+          environment and independently. Ability to plan and time schedule, work
+          under strict time pressure and adapt quickly when needed
+        </p>
+        <div class="skillset">
+          <div class="skillset_left">
+            <h3 class="skillset_title">Skills</h3>
+            <div class="skill">
+              <div class="skill_description">
+                <span>HTML</span>
+                <span>90%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
             </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>CSS</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>JAVASCRIPT</span>
+                <span>70%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>TYPESCRIPT</span>
+                <span>0%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>REACT</span>
+                <span>20%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill_description">
+                <span>NODEJS</span>
+                <span>50%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value"></div>
+              </div>
             </div>
           </div>
-          <div class="skill">
-            <div class="skill_description">
-              <span>CSS</span>
-              <span>80%</span>
+          <div class="skillset_right">
+            <div class="tools">
+              <h3 class="skillset_title">Tools</h3>
+              <ul class="tools__list">
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Android Studio Code</span></li>
+                <li><span>Sublime Text with Plug-ings</span></li>
+                <li><span>Adobe Premiere</span></li>
+                <li><span>Notion</span></li>
+              </ul>
             </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
+            <div class="Etc">
+              <h3 class="skillset_title">Etc</h3>
+              <ul class="etc__list">
+                <li><span>Git</span></li>
+                <li><span>Video Editing</span></li>
+                <li><span>Korean</span></li>
+              </ul>
             </div>
-          </div>
-          <div class="skill">
-            <div class="skill_description">
-              <span>JAVASCRIPT</span>
-              <span>70%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill_description">
-              <span>TYPESCRIPT</span>
-              <span>0%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill_description">
-              <span>REACT</span>
-              <span>20%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill_description">
-              <span>NODEJS</span>
-              <span>50%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__value"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skillset_right">
-          <div class="tools">
-            <h3 class="skillset_title">Tools</h3>
-            <ul class="tools__list">
-              <li><span>Visual Studio Code</span></li>
-              <li><span>Android Studio Code</span></li>
-              <li><span>Sublime Text with Plug-ings</span></li>
-              <li><span>Adobe Premiere</span></li>
-              <li><span>Notion</span></li>
-            </ul>
-          </div>
-          <div class="Etc">
-            <h3 class="skillset_title">Etc</h3>
-            <ul class="etc__list">
-              <li><span>Git</span></li>
-              <li><span>Video Editing</span></li>
-              <li><span>Korean</span></li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
     <!-- Work -->
-    <section id="work">
+    <section id="work" class="section">
       <h1>My work</h1>
       <h3>Projects</h3>
       <div class="work__categories">
@@ -316,7 +336,7 @@
       </div>
     </section>
     <!-- Testimonials -->
-    <section id="testimonials">
+    <section id="testimonials" class="section">
       <h1>Testimonials</h1>
       <h3>See What they say about me</h3>
       <div class="testimonials">
@@ -355,7 +375,7 @@
       </div>
     </section>
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="section">
       <hl class="contact__title">Let's talk</hl>
       <h2 class="contact__email">ibory1220@gmail.com</h2>
       <div class="contact__links">

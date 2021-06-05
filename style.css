@@ -14,7 +14,7 @@
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
-  --color-orange: #feb546;
+  --color-orange2: #ff833a;
   --color-black: #000000;
 
   /* Font size */
@@ -28,6 +28,9 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
+  /* Animation duration */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags 공통적으로 적용해야할 것 */
@@ -49,15 +52,12 @@ a {
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-font-white);
+  color: var(--color-black);
   margin: 16px 0;
 }
 
 ul {
   padding-left: 0;
-}
-
-li {
   list-style: none;
 }
 
@@ -71,21 +71,21 @@ button {
 h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  color: var(--color-font-white);
+  color: var(--color-black);
   margin: 8px 0;
 }
 
 h3 {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-font-white);
+  color: var(--color-black);
   margin: 8px 0;
 }
 
 p {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-font-white);
+  color: var(--color-black);
   margin: 4px 0;
 }
 
@@ -104,24 +104,38 @@ p {
 }
 
 .navbar__menu__item {
-  padding: 8px 2vw;
+  padding: 4px 1vw;
   margin: 0 4px;
   cursor: pointer;
 }
 
 .navbar__logo {
+  font-family: "Satisfy", cursive;
   font-size: var(--font-small);
   font-weight: var(--weight-semi-bold);
 }
+
+.navbar__logo a:hover {
+  color: var(--color-white);
+}
+
 .navbar__search__btn {
   margin-right: 12px;
   color: var(--color-font-white);
   background-color: var(--color-background-black);
 }
 
+.navbar__search__btn:hover {
+  color: var(--color-white);
+}
+
 .navbar__menu__item span {
   position: relative;
   font-size: var(--font-micro);
+}
+
+.navbar__menu__item span:hover {
+  color: var(--color-white);
 }
 
 .navbar__menu__item span::before {
@@ -130,7 +144,7 @@ p {
   background-color: var(--color-background-black);
   height: 2px;
   width: 0;
-  bottom: -10px; /*bottom을 주어, 글자 밑에 위치시킴*/
+  bottom: -5px; /*bottom을 주어, 글자 밑에 위치시킴*/
   transition: 0.5s; /*가상클래스에 이벤트 발생시 시간 지정*/
 
   left: 50%; /*만약 왼쪽에서부터 커지게하려면-> left를 0으로 두면 됨*/
@@ -144,40 +158,163 @@ p {
 
 /* Home */
 #home {
-  background-color: var(--color-background-black);
-  /* background: url("imgs/home-background.png") center/cover no-repeat; */
-  padding: 40px 40px 0 40px;
+  /* background-color: var(--color-background-black); */
+  background: url("imgs/home-background.png") center/cover no-repeat;
+  padding: 40px;
+  padding-bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.home__left {
-  margin-right: 20px;
-}
-
 .home__title {
+  font-family: "Playfair Display", serif;
+  font-size: 60px;
+  color: var(--color-font-white);
   margin: 0;
-  width: 100%;
 }
 .home__description {
-  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+  color: var(--color-font-white);
+  margin-bottom: 0px;
 }
 
 .home__border {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-left: solid 5px var(--color-font-white);
-  padding: 0 24px;
+  /* border-left: solid 5px var(--color-font-white); */
+  /* padding: 0 24px; */
 }
 
 .home__contact {
-  font-size: var(--font-micro);
+  font-size: calc(var(--font-micro) / 1.2);
   /* font-weight: var(--weight-semi-bold); */
   margin: 24px;
-  padding: 4px 36px;
+  padding: 8px 40px;
   border: solid 2px var(--color-orange);
   border-radius: 15px;
   color: var(--color-font-white);
+}
+
+.home__contact:hover {
+  color: var(--color-white);
+}
+
+.home__left {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.img {
+  flex: 1 1 45%;
+}
+
+.home__avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.pageBtn {
+  flex: 1 1 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.pageBtn button {
+  padding: 14px 1.5px;
+  margin-bottom: 16px;
+  background-color: var(--color-font-white);
+}
+
+.pageBtn button:hover {
+  background-color: var(--color-orange);
+}
+
+/* Section common */
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  color: var(--color-orange2);
+  border: 1px solid var(--color-orange2);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i {
+  transition: all 300ms ease;
+}
+
+.major__icon:hover i {
+  color: #e65100;
+  transform: scale(1.1);
+}
+
+.major__title {
+  font-size: var(--font-regular);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.school {
+  display: flex;
+  align-items: center;
+}
+
+.school__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.school__name,
+.school__period {
+  color: var(--color-light-grey);
+}
+
+.school__name {
+  font-size: var(--font-small);
+}
+
+.school__period {
+  font-size: var(--font-micro);
+}
+
+.school__logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* Skill */
+#skills {
+  background-color: var(--color-background-black);
 }
