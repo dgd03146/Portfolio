@@ -33,12 +33,24 @@
       </div>
       <div class="navbar__menu">
         <ul class="navbar__menu">
-          <li class="navbar__menu__item"><span>Home</span></li>
-          <li class="navbar__menu__item"><span>About</span></li>
-          <li class="navbar__menu__item"><span>Skills</span></li>
-          <li class="navbar__menu__item"><span>Work</span></li>
-          <li class="navbar__menu__item"><span>Testimonial</span></li>
-          <li class="navbar__menu__item"><span>Contact</span></li>
+          <li class="navbar__menu__item">
+            <span data-link="#home">Home</span>
+          </li>
+          <li class="navbar__menu__item">
+            <span data-link="#about">About</span>
+          </li>
+          <li class="navbar__menu__item">
+            <span data-link="#skills">Skills</span>
+          </li>
+          <li class="navbar__menu__item">
+            <span data-link="#work">Work</span>
+          </li>
+          <li class="navbar__menu__item">
+            <span data-link="#testimonials">Testimonial</span>
+          </li>
+          <li class="navbar__menu__item contact">
+            <span data-link="#contact">Contact</span>
+          </li>
         </ul>
       </div>
       <button class="navbar__search__btn">
@@ -68,12 +80,16 @@
       </div>
 
       <ul class="pageBtn">
-        <li><button class="current__page active"></button></li>
-        <li><button class="current__page"></button></li>
-        <li><button class="current__page"></button></li>
-        <li><button class="current__page"></button></li>
-        <li><button class="current__page"></button></li>
-        <li><button class="current__page"></button></li>
+        <li>
+          <button class="current__page active" data-link="#home"></button>
+        </li>
+        <li><button class="current__page" data-link="#about"></button></li>
+        <li><button class="current__page" data-link="#skills"></button></li>
+        <li><button class="current__page" data-link="#work"></button></li>
+        <li>
+          <button class="current__page" data-link="#testimonial"></button>
+        </li>
+        <li><button class="current__page" data-link="#contact"></button></li>
       </ul>
     </section>
     <!-- About -->

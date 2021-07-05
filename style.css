@@ -103,10 +103,11 @@ p {
   align-items: center;
   padding: 12px 24px;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 
 #navbar.navbar--dark {
-  background-color: var(--color-background-black);
+  background-color: #444444;
   padding: 0 24px;
 }
 
@@ -181,6 +182,7 @@ p {
   /* background-color: var(--color-background-black); */
   background-color: var(--color-black);
   padding: 40px;
+  padding-top: 120px;
   /* padding-bottom: 0; */
   display: flex;
   align-items: center;
@@ -214,10 +216,12 @@ p {
   border: solid 2px var(--color-orange);
   border-radius: 15px;
   color: var(--color-font-white);
+  transition: all 300ms ease-in;
 }
 
 .home__contact:hover {
   color: var(--color-white);
+  transform: scale(1.05);
 }
 
 .home__left {
