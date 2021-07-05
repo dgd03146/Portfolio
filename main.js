@@ -15,7 +15,6 @@ document.addEventListener("scroll", () => {
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
-  console.log("hi");
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
@@ -36,6 +35,15 @@ pageBtn.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   scrollIntoView(link);
+});
+
+// Make home slowly fade to transparent as the window scrolls down
+const home__container = document.querySelector("#home");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+  home__container.style.opacity = 1 - (window.scrollY / homeHeight - 0.25);
+  console.log(home.style.opacity);
 });
 
 function scrollIntoView(selector) {
