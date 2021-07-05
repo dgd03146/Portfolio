@@ -38,14 +38,29 @@ pageBtn.addEventListener("click", (event) => {
 });
 
 // Make home slowly fade to transparent as the window scrolls down
-const home__container = document.querySelector("#home");
+const home = document.querySelector("#home");
+const home__container = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
-  home__container.style.opacity = 1 - (window.scrollY / homeHeight - 0.25);
-  console.log(home.style.opacity);
+  home__container.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// Show "arrow up" button when scrolling down
+const upArrow = document.querySelector(".upArrow");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    upArrow.classList.add("visible");
+  } else {
+    upArrow.classList.remove("visible");
+  }
+});
+
+upArrow.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
+// scollIntoView
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });

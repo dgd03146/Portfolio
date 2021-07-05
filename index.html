@@ -64,32 +64,34 @@
     </nav>
     <!-- Home -->
     <section id="home">
-      <div class="home__left">
-        <div class="home__border">
-          <h1 class="home__title">I'm Geojung</h1>
-          <h2 class="home__description">Growing Web Developer</h2>
+      <div class="home__container">
+        <div class="home__left">
+          <div class="home__border">
+            <h1 class="home__title">I'm Geojung</h1>
+            <h2 class="home__description">Growing Web Developer</h2>
+          </div>
+          <button class="home__contact">contact</button>
         </div>
-        <button class="home__contact">contact</button>
+        <div class="img">
+          <img
+            src="imgs/avatar.png"
+            alt="Jung's profile photo"
+            class="home__avatar"
+          />
+        </div>
+        <ul class="pageBtn">
+          <li>
+            <button class="current__page active" data-link="#home"></button>
+          </li>
+          <li><button class="current__page" data-link="#about"></button></li>
+          <li><button class="current__page" data-link="#skills"></button></li>
+          <li><button class="current__page" data-link="#work"></button></li>
+          <li>
+            <button class="current__page" data-link="#testimonial"></button>
+          </li>
+          <li><button class="current__page" data-link="#contact"></button></li>
+        </ul>
       </div>
-      <div class="img">
-        <img
-          src="imgs/avatar.png"
-          alt="Jung's profile photo"
-          class="home__avatar"
-        />
-      </div>
-      <ul class="pageBtn">
-        <li>
-          <button class="current__page active" data-link="#home"></button>
-        </li>
-        <li><button class="current__page" data-link="#about"></button></li>
-        <li><button class="current__page" data-link="#skills"></button></li>
-        <li><button class="current__page" data-link="#work"></button></li>
-        <li>
-          <button class="current__page" data-link="#testimonial"></button>
-        </li>
-        <li><button class="current__page" data-link="#contact"></button></li>
-      </ul>
     </section>
     <!-- About -->
     <section id="about" class="section section__container">
@@ -369,7 +371,7 @@
               alt="People"
               class="testimonial__avatar"
             />
-            <div class="stestimonial__speech-bubble">
+            <div class="testimonial__speech-bubble">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Officia culpa ullam error delectus eligendi atque blanditiis
@@ -380,7 +382,7 @@
             </div>
           </div>
           <div class="testimonial">
-            <div class="stestimonial__speech-bubble">
+            <div class="testimonial__speech-bubble">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Officia culpa ullam error delectus eligendi atque blanditiis
@@ -401,7 +403,7 @@
     <!-- Contact -->
     <section id="contact" class="section">
       <h1 class="contact__title">Let's talk</h1>
-      <h2 class="contact__email">ibory1220@gmail.com</h2>
+      <h2 class="contact__email">ibory1220@naver.com</h2>
       <div class="contact__links">
         <a href="https://github.com/dgd03146" target="_blank">
           <i class="fab fa-github"></i>
@@ -415,5 +417,9 @@
       </div>
       <p class="contact_rights">2021 I'm Geojung - All rights reserved</p>
     </section>
+    <!-- Arrow up -->
+    <button class="upArrow">
+      <i class="far fa-arrow-alt-circle-up"></i>
+    </button>
   </body>
 </html>

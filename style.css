@@ -188,6 +188,12 @@ p {
   align-items: center;
 }
 
+.home__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .home__title {
   font-family: "Playfair Display", serif;
   font-size: 60px;
@@ -546,17 +552,17 @@ p {
   margin-left: 40px;
 }
 
-.stestimonial__speech-bubble p {
+.testimonial__speech-bubble p {
   color: #ffffff;
 }
 
-.stestimonial__speech-bubble {
+.testimonial__speech-bubble {
   padding: 18px;
   background-color: #6d6d6d;
   border-radius: var(--size-border-radius);
 }
 
-.stestimonial__speech-bubble a {
+.testimonial__speech-bubble a {
   color: var(--color-orange2);
 }
 
@@ -581,6 +587,23 @@ p {
   transform: scale(1.1);
   color: var(--color-grey);
 }
+
+/* Scroll */
+.upArrow {
+  font-size: calc(var(--font-medium) * 1.2);
+  position: fixed;
+  right: 8px;
+  bottom: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.upArrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 786px) {
   .navbar__toogle-btn {
