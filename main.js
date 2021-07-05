@@ -60,6 +60,35 @@ upArrow.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
+// Fiter projects
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  // dataset에 필터가 없으면 parent node의 필터를 쓴다.
+  if (filter === null) {
+    return;
+  }
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
+
+// function filterProject(event, key) {
+
+// }
+
 // scollIntoView
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
