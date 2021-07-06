@@ -12,14 +12,23 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// navbar toggle
+const navbarToggleBtn = document.querySelector(".navbar__toogle-btn");
 const navbarMenu = document.querySelector(".navbar__menu");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+  document.body.classList.toggle("disabled");
+});
+
+// Handle scrolling when tapping on the navbar menu
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
+  document.body.classList.toggle("disabled");
   scrollIntoView(link);
 });
 
