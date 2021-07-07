@@ -1,5 +1,13 @@
 "use strict";
 
+// navbar toggle
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+  document.body.classList.toggle("disabled");
+});
+
 // Make navbar trasparent when it is on the top
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
@@ -7,17 +15,11 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
+    navbarToggleBtn.style.top = "14px";
   } else {
     navbar.classList.remove("navbar--dark");
+    navbarToggleBtn.style.top = "24px";
   }
-});
-
-// navbar toggle
-const navbarToggleBtn = document.querySelector(".navbar__toogle-btn");
-const navbarMenu = document.querySelector(".navbar__menu");
-navbarToggleBtn.addEventListener("click", () => {
-  navbarMenu.classList.toggle("open");
-  document.body.classList.toggle("disabled");
 });
 
 // Handle scrolling when tapping on the navbar menu
@@ -43,6 +45,9 @@ const pageBtn = document.querySelector(".pageBtn");
 pageBtn.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
+  if (link == null) {
+    return;
+  }
   scrollIntoView(link);
 });
 
