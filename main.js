@@ -1,16 +1,9 @@
 "use strict";
 
-// navbar toggle
-const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
-const navbarMenu = document.querySelector(".navbar__menu");
-navbarToggleBtn.addEventListener("click", () => {
-  navbarMenu.classList.toggle("open");
-  document.body.classList.toggle("disabled");
-});
-
 // Make navbar trasparent when it is on the top
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
+const closeMenuBtn = document.querySelector(".navbar__close-btn");
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > navbarHeight) {
@@ -22,6 +15,21 @@ document.addEventListener("scroll", () => {
   }
 });
 
+// navbar toggle
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+
+  document.body.classList.add("disabled");
+});
+
+// closeMenu
+closeMenuBtn.addEventListener("click", () => {
+  navbarMenu.classList.remove("open");
+  document.body.classList.remove("disabled");
+});
+
 // Handle scrolling when tapping on the navbar menu
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -30,8 +38,8 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
   navbarMenu.classList.remove("open");
-  document.body.classList.toggle("disabled");
   scrollIntoView(link);
+  document.body.classList.toggle("disabled");
 });
 
 // Handle click on "contact me" button on home

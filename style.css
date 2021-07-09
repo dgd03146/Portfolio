@@ -161,6 +161,10 @@ p {
   color: var(--color-white);
 }
 
+.navbar__close-btn {
+  display: none;
+}
+
 .navbar__menu__item span {
   position: relative;
   font-size: var(--font-micro);
@@ -190,9 +194,9 @@ p {
 
 .navbar__toggle-btn {
   display: none;
-  position: absolute;
+  /* position: absolute;
   top: 24px;
-  right: 24px;
+  right: 24px; */
   font-size: 16px;
   color: var(--color-font-white);
 }
@@ -220,7 +224,7 @@ p {
 
 .home__title {
   font-family: "Playfair Display", serif;
-  font-size: 70px;
+  font-size: 4rem;
   color: var(--color-font-white);
   margin: 0;
 }
@@ -235,8 +239,8 @@ p {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* border-left: solid 5px var(--color-font-white); */
-  /* padding: 0 24px; */
+  /* border-left: solid 5px var(--color-font-white);
+  padding: 0 24px; */
 }
 
 .home__contact {
@@ -666,8 +670,9 @@ p {
   }
 
   #navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 12px 24px;
     background-color: var(--color-black);
   }
@@ -681,17 +686,32 @@ p {
     display: none;
   }
   .navbar__menu {
-    display: none;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    justify-content: center;
     flex-direction: column;
-    text-align: center;
     width: 100%;
     height: 100vh;
+    margin: 0;
     padding: 0px 12px;
-    transition: all 0.3s;
+    transition: 500ms ease-in-out;
+    background-color: var(--color-black);
+  }
+
+  .navbar__close-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 16px;
+    color: var(--color-font-white);
+    font-size: 18px;
+    cursor: pointer;
   }
 
   .navbar__menu.open {
-    display: block;
+    top: 0;
   }
 
   .navbar__search__btn {
@@ -699,7 +719,7 @@ p {
   }
 
   .navbar__menu__item {
-    padding: 24px 0;
+    padding: 2rem 0;
     text-align: left;
     border-bottom: thin solid var(--color-grey);
   }
