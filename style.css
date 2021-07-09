@@ -122,6 +122,23 @@ p {
   margin: 0 4px;
   cursor: pointer;
 }
+.navbar__menu__item.active span::before {
+  content: "";
+  position: absolute; /*before를 절대위치*/
+  background-color: var(--color-background-black);
+  height: 2px;
+  width: 0;
+  bottom: -5px; /*bottom을 주어, 글자 밑에 위치시킴*/
+  transition: 0.5s; /*가상클래스에 이벤트 발생시 시간 지정*/
+
+  left: 50%; /*만약 왼쪽에서부터 커지게하려면-> left를 0으로 두면 됨*/
+  transform: translateX(-50%);
+}
+
+.navbar__menu__item.active span::before {
+  width: 100%;
+  background-color: var(--color-font-white);
+}
 
 .navbar__logo {
   font-family: "Satisfy", cursive;
@@ -211,13 +228,14 @@ p {
 
 .home__title {
   font-family: "Playfair Display", serif;
-  font-size: 60px;
+  font-size: 70px;
   color: var(--color-font-white);
   margin: 0;
 }
 .home__description {
   font-family: "Playfair Display", serif;
   color: var(--color-font-white);
+  font-size: 35px;
   margin-bottom: 0px;
 }
 
@@ -246,12 +264,12 @@ p {
 }
 
 .home__left {
-  flex: 1 1 45%;
+  flex: 1 1 50%;
   text-align: center;
 }
 
 .img {
-  flex: 1 1 45%;
+  flex: 1 1 40%;
 }
 
 .home__avatar {
